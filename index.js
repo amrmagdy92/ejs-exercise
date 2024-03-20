@@ -23,10 +23,18 @@ const getAdvice = (dayNumber) => {
 const today = parseDay(new Date().getDay())
 const todayAdvice = getAdvice(new Date().getDay())
 
+const testData = {
+    title: "EJS Tags",
+    seconds: Date.now(),
+    items: ["Apples", "Oranges", "Strawberry"],
+    htmlContent: "<em>This is some em text<em>"
+}
+
 app.get('/', (req, res) => {
     res.render("index.ejs", {
         weekday: today,
-        advice: todayAdvice
+        advice: todayAdvice,
+        data: testData
     })
 })
 
