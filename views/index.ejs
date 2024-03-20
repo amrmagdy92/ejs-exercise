@@ -6,6 +6,17 @@
         <meta content='maximum-scale=1.0, initial-scale=1.0, width=device-width' name='viewport'>
     </head>
     <body>
-        <h1>Today is <%= weekday %>, <%= advice %></h1>
+        <%- include("header.ejs") %>
+        <h3>Today is <%= weekday %>, <%= advice %></h3>
+        <h3>Current seconds: <%= data.seconds %></h3>
+        <ul>
+            <% for (let i = 0; i < data.items.length; i++) {%>
+            <li>
+                <%= data["items"][i] %>
+            </li>
+            <%} %>
+        </ul>
+        <%- data.htmlContent %>
+        <%- include("footer.ejs") %>
     </body>
 </html>
